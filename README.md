@@ -29,4 +29,4 @@ Visual representation of the cluster architecture:
 
 k8s playbook for the cluster setup on ubuntu
 
-!Setup Playbook(setup-guides/K8s_Node_Setup_Script_On_Ubuntu.md)
+![Setup Playbook](setup-guides/K8s_Node_Setup_Script_On_Ubuntu.md)
