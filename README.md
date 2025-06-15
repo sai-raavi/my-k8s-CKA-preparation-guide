@@ -1,6 +1,6 @@
-# Kubernetes (K3s) Architecture Guide
+# Kubernetes (K8s) Architecture Guide
 
-Welcome to the Kubernetes (K3s) Architecture Guide! This repository aims to provide clear explanations and diagrams of the core components that make up a Kubernetes cluster, with a focus on K3s implementations.
+Welcome to the Kubernetes (K8s) Architecture Guide! This repository aims to provide clear explanations and diagrams of the core components that make up a Kubernetes cluster, with a focus on K3s implementations.
 
 Whether you're setting up your first cluster, troubleshooting issues, or simply looking to deepen your understanding, this guide will walk you through the essential elements of both the Control Plane (Master) and Worker nodes.
 
@@ -9,8 +9,6 @@ Whether you're setting up your first cluster, troubleshooting issues, or simply 
 - [Control Plane Components](#control-plane-components)
 - [Worker Node Components](#worker-node-components)
 - [Setup Guides](#setup-guides)
-- [Diagrams](#diagrams)
-- [Contributing](#contributing)
 
 ---
 
@@ -27,3 +25,8 @@ Visual representation of the cluster architecture:
 ![Kubernetes Architecture Diagram](diagrams/kubernetes_architecture.png)
 
 ---
+## Setup Guides
+
+k8s playbook for the cluster setup on ubuntu
+
+[Link to `setup-guides/K8s_Node_Setup_Script_On_Ubuntu.md`]
