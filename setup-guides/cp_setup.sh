@@ -4,7 +4,7 @@ set -e
 
 ip_addr=$(hostname -i)
 
-new_host_entries="${ip_addr} k8s-cp
+new_host_entries="${ip_addr} $(hostname)
 ${ip_addr} cp"
 
 echo "Adding the following entries to /etc/hosts:"
@@ -17,7 +17,7 @@ cat << EOF | tee kubeadm-config.yaml
 apiVersion: kubeadm.k8s.io/v1beta4
 kind: ClusterConfiguration
 kubernetesVersion: 1.31.1               # Explicitly specifying Kubernetes version 1.31.1
-controlPlaneEndpoint: "k8s-cp:6443"     # Using the 'k8s-cp' alias defined in /etc/hosts for the control plane endpoint
+controlPlaneEndpoint: "$(hostname):6443"     # Using the 'k8s-cp' alias defined in /etc/hosts for the control plane endpoint
 networking:
   podSubnet: 192.168.0.0/16
 EOF
