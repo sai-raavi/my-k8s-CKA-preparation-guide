@@ -6,8 +6,6 @@ Whether you're setting up your first cluster, troubleshooting issues, or simply 
 
 ## Table of Contents
 - [Architecture Overview](#architecture-overview)
-- [Control Plane Components](#control-plane-components)
-- [Worker Node Components](#worker-node-components)
 - [Setup Guides](#setup-guides)
 
 ---
@@ -17,12 +15,6 @@ Whether you're setting up your first cluster, troubleshooting issues, or simply 
 Kubernetes operates on a client-server architecture with a clear separation of concerns between the Control Plane (often referred to as the Master node) and the Worker Nodes.
 
 [Link to `architecture/overview.md`]
-
-## Diagrams
-
-Visual representation of the cluster architecture:
-
-![Kubernetes Architecture Diagram](architecture/kubernetes_architecture.png)
 
 ---
 ## Setup Guides
