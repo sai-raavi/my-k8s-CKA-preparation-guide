@@ -22,7 +22,7 @@ Kubernetes operates on a client-server architecture with a clear separation of c
 
 Visual representation of the cluster architecture:
 
-![Kubernetes Architecture Diagram](diagrams/kubernetes_architecture.png)
+![Kubernetes Architecture Diagram](architecture/kubernetes_architecture.png)
 
 ---
 ## Setup Guides
