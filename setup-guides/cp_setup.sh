@@ -21,7 +21,7 @@ controlPlaneEndpoint: "$(hostname):6443"     # Using the 'k8s-cp' alias defined 
 networking:
   podSubnet: 192.168.0.0/16
 EOF
-kubeadm init --config=kubeadm-config.yaml --upload-certs --node-name=k8s-cp \
+kubeadm init --config=kubeadm-config.yaml --upload-certs --node-name=$(hostname) \
 | tee kubeadm-init.out                
 
 echo "kubeadm-config.yaml generated successfully."
