@@ -25,3 +25,7 @@ kubeadm init --config=kubeadm-config.yaml --upload-certs --node-name=$(hostname)
 | tee kubeadm-init.out                
 
 echo "kubeadm-config.yaml generated successfully."
+
+export KUBECONFIG=/etc/kubernetes/admin.conf
+
+echo "exported KUBECONFIG"
