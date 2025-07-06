@@ -29,3 +29,12 @@ echo "kubeadm-config.yaml generated successfully."
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
 echo "exported KUBECONFIG"
+
+cat <<EOF > /tmp/setup_kubeconfig.sh
+#!/bin/bash
+mkdir -p \$HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf \$HOME/.kube/config
+sudo chown \$(id -u):\$(id -g) \$HOME/.kube/config
+EOF
+
+ech "created /tmp/setup_kubeconfig.sh file"
