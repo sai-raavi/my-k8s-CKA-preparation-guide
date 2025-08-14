@@ -3,9 +3,8 @@
 set -e
 
 ip_addr=$(hostname -i)
-
-new_host_entries="${ip_addr} $(hostname)
-${ip_addr} cp"
+pub_ip_addr=$(curl ifconfig.me)
+new_host_entries="${pub_ip_addr} $(hostname)"
 
 echo "Adding the following entries to /etc/hosts:"
 echo "$new_host_entries" | cat - /etc/hosts | sudo tee /etc/hosts > /dev/null
