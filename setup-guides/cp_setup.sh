@@ -15,7 +15,7 @@ head -n 5 /etc/hosts
 cat << EOF | tee kubeadm-config.yaml
 apiVersion: kubeadm.k8s.io/v1beta4
 kind: ClusterConfiguration
-kubernetesVersion: 1.31.1               # Explicitly specifying Kubernetes version 1.31.1
+kubernetesVersion: 1.32.1              # Explicitly specifying Kubernetes version 1.31.1
 controlPlaneEndpoint: "$(hostname):6443"     # Using the 'k8s-cp' alias defined in /etc/hosts for the control plane endpoint
 networking:
   podSubnet: 192.168.0.0/16
