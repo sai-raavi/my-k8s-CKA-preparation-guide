@@ -72,7 +72,7 @@ install_k8s() {
    #### Install Kubernetes latest components
    echo "starting the installation of k8s components (kubeadm,kubelet,kubectl) ...."
    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-   echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /" | tee -a /etc/apt/sources.list.d/kubernetes.list
+   echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /" | tee -a /etc/apt/sources.list.d/kubernetes.list
    apt-get update
    apt-get install -y kubelet kubeadm kubectl || { echo "Error: Failed to install kubelet, kubeadm, kubectl."; exit 1; }
    echo "kubelet, kubeadm & kubectl are successfully installed"
