@@ -65,6 +65,8 @@ data:
   identity-gc-interval: "15m0s"
   cilium-endpoint-gc-interval: "5m0s"
   nodes-gc-interval: "5m0s"
+  routing-mode: "tunnel"
+  tunnel-protocol: "vxlan"
 
   # If you want to run cilium in debug mode change this value to true
   debug: "false"
@@ -219,7 +221,7 @@ data:
   hubble-tls-client-ca-files: /var/lib/cilium/tls/hubble/client-ca.crt
   ipam: "cluster-pool"
   ipam-cilium-node-update-rate: "15s"
-  cluster-pool-ipv4-cidr: "192.168.0.0/16"  
+  cluster-pool-ipv4-cidr: "10.1.0.0/16"  
   cluster-pool-ipv4-mask-size: "24"
   egress-gateway-reconciliation-trigger-interval: "1s"
   enable-vtep: "false"
@@ -936,7 +938,7 @@ rules:
   - get
   - update
 ---
-# Source: cilium/templates/cilium-agent/clusterrolebinding.yaml
+# Source: cilium/templates/cilium -agent/clusterrolebinding.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
