@@ -1,16 +1,25 @@
 #!/bin/bash
 # Exit immediately if any command fails.
-set -e
+set -euo pipefail
 
 basic_update() {
-   echo "performing basic update and installing essential pkgs"
-   apt-get update && apt-get upgrade -y
-   apt-get install -y apt-transport-https ca-certificates curl gpg software-properties-common
+  echo "performing basic update and installing essential pkgs"
 
-   echo "Basic update and essential package installation complete."
+  # Just update package index; don't full-upgrade to avoid interactive dpkg prompts
+  export DEBIAN_FRONTEND=noninteractive
 
-   enable_modules || { echo "Error: 'enable_modules' function failed."; exit 1; }
+  apt-get update -y
 
+  apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gpg \
+    software-properties-common
+
+  echo "Basic update and essential package installation complete."
+
+  enable_modules
 }
 
 enable_modules() { # Corrected function name and added closing brace
