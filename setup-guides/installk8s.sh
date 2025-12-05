@@ -60,7 +60,8 @@ install_containerd() {
         { echo "Error: Failed to add Docker APT repository."; exit 1; }
 
     echo "Updating apt package index and installing containerd.io..."
-    apt-get install containerd.io -y
+    # apt-get install containerd.io -y
+    apt-get update &&  apt-get install containerd.io -y
 
     echo "Generating and configuring containerd default configuration..."
     containerd config default | tee /etc/containerd/config.toml
